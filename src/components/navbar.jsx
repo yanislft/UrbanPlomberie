@@ -1,47 +1,82 @@
-import React, { useContext, useState } from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
+import React, { useEffect, useState } from "react";
+import UpLogo from "../assets/upLogo1-3.svg";
 
 const Navbar = () => {
-  const { language, toggleLanguage } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-  const handleToggle = () => setIsOpen(!isOpen);
+  // Keep the menu mounted long enough for the closing animation to play
+  useEffect(() => {
+    if (isOpen) {
+      setIsMenuVisible(true);
+      return;
+    }
+
+    if (isMenuVisible) {
+      const t = setTimeout(() => setIsMenuVisible(false), 400);
+      return () => clearTimeout(t);
+    }
+  }, [isOpen, isMenuVisible]);
 
   const links = [
-  { id: "home", fr: "À propos", en: "About me" },
-  { id: "projects", fr: "Projets", en: "Projects" },
-  { id: "skills", fr: "Compétences", en: "Skills" },
-  { id: "contact", fr: "Contact", en: "Contact" },
-];
+    { fr: "À propos", href: "#about" },
+    { fr: "Prestations", href: "#presta" },
+    { fr: "Chantiers", href: "#chantiers" },
+    { fr: "Devis", href: "#devis" },
+    { fr: "Contact", href: "#contact" },
+  ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="navbar-title">Yanis Laftimi</h1>
-        <button className="navbar-toggle" onClick={handleToggle}>
-          ☰
-        </button>
-        <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
-          <ul className="navbar-links">
-            {links.map(link => (
-              <li key={link.id}>
-                <a href={`#${link.id}`} className="navbar-link">
-                  {language === "fr" ? link.fr : link.en}
+        
+        <img src={UpLogo} className="navbar-logo"/>
+
+        <label className="burger d-md-none" htmlFor="burger">
+          <input
+            type="checkbox"
+            id="burger"
+            checked={isOpen}
+            onChange={(e) => {
+              const checked = e.target.checked;
+              if (checked) setIsMenuVisible(true);
+              setIsOpen(checked);
+            }}
+          />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        {isMenuVisible && (
+          <ul
+            className={`navbar-links d-md-none ${
+              isOpen ? "scale-in-hor-right" : "scale-out-hor-right"
+            }`}
+          >
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="navbar-link"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.fr}
                 </a>
               </li>
             ))}
-            <button onClick={toggleLanguage} className="language-button desktop-only">
-             {language === "fr" ? "EN" : "FR"}
-            
-          </button>
-
-          <button onClick={toggleLanguage} className="language-button-mobile mobile-only">
-            {language === "fr" ? "EN" : "FR"}
-            
-          </button>
-
           </ul>
-        </div>
+        )}
+
+        <ul className="navbar-links d-none d-md-flex">
+          {links.map((link, index) => (
+            <li key={index}>
+              <a href={link.href} className="navbar-link">
+                {link.fr}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

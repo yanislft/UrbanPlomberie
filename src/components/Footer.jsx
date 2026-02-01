@@ -1,0 +1,47 @@
+import UpLogo from "../assets/upLogo1White.svg";
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer-container">
+
+        <div className="row">
+
+          <div className="col-12 col-md-4 footer-col text-center text-md-start">
+            <img src={UpLogo} className="footer-logo mb-3" alt="Urban Plomberie" />
+            <p>
+              Dépannage, installation et entretien de vos équipements de plomberie.
+              Intervention rapide et travail soigné.
+            </p>
+          </div>
+
+          <div className="col-12 col-md-4 footer-col text-center text-md-start">
+            <h4>Contact</h4>
+            <ul>
+              <li>Cavaillon & alentours</li>
+              <li>06 12 34 56 78</li>
+              <li>urbanplomberie@gmail.com</li>
+            </ul>
+          </div>
+
+          <div className="col-12 col-md-4 footer-col text-center text-md-start">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="/mentions-legales">Mentions légales</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="footer-bottom text-center">
+        <p>© {new Date().getFullYear()} Urban Plomberie — Tous droits réservés</p>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

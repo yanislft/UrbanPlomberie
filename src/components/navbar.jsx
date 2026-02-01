@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import UpLogo from "../assets/upLogo1-3.svg";
+import UpLogo from "../assets/upLogo1.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-  // Keep the menu mounted long enough for the closing animation to play
   useEffect(() => {
     if (isOpen) {
       setIsMenuVisible(true);

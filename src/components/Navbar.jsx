@@ -8,9 +8,12 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       setIsMenuVisible(true);
+      document.body.style.overflow = "hidden";
       return;
     }
 
+    document.body.style.overflow = "";
+    
     if (isMenuVisible) {
       const t = setTimeout(() => setIsMenuVisible(false), 400);
       return () => clearTimeout(t);

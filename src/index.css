@@ -328,7 +328,7 @@
     color: white;
 
     /* Image de fond */
-    background-image: url("assets/hero1.jpg");
+    background-image: url("assets/hero/hero1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -610,3 +610,29 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   }
 
+/********************************************************************
+
+/************ Prestations **********/
+
+.prestations {
+  background-color: var(--bgCol);
+}
+
+.prestations-title {
+  color: var(--dblue);
+}
+
+.prestations .card {
+  border: none;
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+
+.prestations .card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UpLogo from "../assets/upLogo1.svg";
+import UpLogo from "../assets/logo/upLogo1.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

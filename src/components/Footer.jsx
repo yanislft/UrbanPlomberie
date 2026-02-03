@@ -1,4 +1,4 @@
-import UpLogo from "../assets/upLogo1White.svg";
+import UpLogo from "../assets/logo/upLogo1White.svg";
 
 function Footer() {
   return (

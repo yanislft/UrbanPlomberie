@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Hero from './pages/Hero';
 import About from './pages/About';
 import Prestation from './pages/Prestation';
+import Chantiers from './pages/Chantiers';
 import 'animate.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
        <Hero />
        <About />
        <Prestation />
+       <Chantiers />
        <Footer />
     </>
   )

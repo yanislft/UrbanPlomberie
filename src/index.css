@@ -365,7 +365,7 @@
     display: flex;
     gap: 20px;
 
-     animation: fadeInLeft;
+    animation: fadeInLeft;
     animation-duration: 2s;
   }
 
@@ -421,6 +421,18 @@
   color: white;
   }
 
+  .fancy .text-b {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dblue);
+  }
+
   .fancy .top-key {
   height: 2px;
   width: 1.5625rem;
@@ -452,7 +464,7 @@
   }
 
   .fancy:hover {
-  color: white;
+  color: rgb(255, 255, 255);
   background: black;
   }
 
@@ -462,6 +474,11 @@
   }
 
   .fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+  }
+
+  .fancy:hover .text-b {
   color: white;
   padding-left: 1.5em;
   }
@@ -614,25 +631,186 @@
 
 /************ Prestations **********/
 
-.prestations {
-  background-color: var(--bgCol);
-}
+  .prestations {
+    background-color: var(--bgCol);
+  }
 
-.prestations-title {
-  color: var(--dblue);
-}
+  .prestations-title {
+    color: var(--dblue);
+  }
 
-.prestations .card {
-  border: none;
-  border-radius: 5%;
-  transition: transform 0.3s ease;
-}
+  .prestations .card {
+    border: none;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+  }
 
-.prestations .card:hover {
-  transform: translateY(-5px);
-}
+  .prestations .card:hover {
+    transform: translateY(-5px);
+  }
 
-.card-img-top {
-  height: 300px;
-  object-fit: cover;
-}
+  .card-img-top {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .contact-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+  }
+
+/********************************************************************
+
+/************ Chantiers **********/
+
+  #chantiers {
+    background-color: var(--bgCol);
+  }
+
+  .chantiers-title
+  {
+    color: var(--dblue);
+  }
+
+  #chantiers .card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #chantiers .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Image */
+  #chantiers .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  #chantiers .card:hover .card-img-top {
+    transform: scale(1.08);
+  }
+
+  /* Contenu */
+  #chantiers .card-body {
+    padding: 1.4rem;
+    color: var(--dblue);
+  }
+
+  #chantiers .card-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  #chantiers .card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /*** Avant / Après ***/
+
+  .chantier-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .image-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .img-avant {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .img-apres {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .chantier-card:hover .img-avant {
+    opacity: 0;
+  }
+
+  .chantier-card:hover .img-apres {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /*** Badge Avant / Après ***/
+
+  .badge-chantier {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* AVANT */
+  .badge-avant {
+    background: rgba(108, 117, 125, 0.85); /* gris Bootstrap */
+    opacity: 1;
+  }
+
+  /* APRÈS */
+  .badge-apres {
+    background: rgba(25, 135, 84, 0.9); /* vert Bootstrap */
+    opacity: 0;
+  }
+
+  /* Hover */
+  .chantier-card:hover .badge-avant {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  .chantier-card:hover .badge-apres {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* État par défaut */
+  .img-avant { opacity: 1; }
+  .img-apres { opacity: 0; }
+
+  /* Desktop hover */
+  @media (hover: hover) {
+    .chantier-card:hover .img-avant { opacity: 0; }
+    .chantier-card:hover .img-apres { opacity: 1; }
+
+    .chantier-card:hover .badge-avant { opacity: 0; }
+    .chantier-card:hover .badge-apres { opacity: 1; }
+  }
+
+  /* Mobile tap */
+  .chantier-card.is-after .img-avant { opacity: 0; }
+  .chantier-card.is-after .img-apres { opacity: 1; }
+
+  .chantier-card.is-after .badge-avant { opacity: 0; }
+  .chantier-card.is-after .badge-apres { opacity: 1; }

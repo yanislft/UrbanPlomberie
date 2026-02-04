@@ -2,15 +2,16 @@ import renovation from "../assets/prestations/renovation.jpg";
 import entretien from "../assets/prestations/entretien.jpg";
 import installation from "../assets/prestations/installation.jpg";
 import urg from "../assets/prestations/urg.jpg";
+import ContactButtons from "../components/Contact-buttons";
 
-function Hero() {
+function Prestation() {
 
-    const links = [
+    const cardContent = [
         { name: "Dépannage d’urgence", desc: "Intervention rapide pour fuites, pannes et urgences 24H/24 6j/7.", img: urg},
         { name: "Installation", desc: "Installation de sanitaires, robinetterie et équipements.", img: installation },
         { name: "Rénovation", desc: "Rénovation complète ou partielle de salle de bain.", img: renovation },    
         { name: "Entretien", desc: "Entretien préventif pour éviter les pannes coûteuses.", img: entretien },    
-  ];
+    ];
 
   return (
         <section className="prestations py-5" id="presta">
@@ -26,31 +27,29 @@ function Hero() {
                 {/* Cartes */}
                 <div className="row g-4 justify-content-center">
 
-                    {links.map((link, index) => (
-                        <div className="col-12 col-md-6">
+                    {cardContent.map((content, index) => (
+                        <div key = {index} className="col-12 col-md-6">
                             <div className="card h-100 shadow-sm">
                                 <img
-                                    src={link.img}
+                                    src={content.img}
                                     className="card-img-top"
                                 />
                                 <div className="card-body text-center">
-                                    <h5 className="prestations-title fw-bold">{link.name}</h5>
+                                    <h5 className="prestations-title fw-bold">{content.name}</h5>
                                     <p className="text-muted">
-                                        {link.desc}
+                                        {content.desc}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     ))}
-
-     
-
-
-                
                 </div>
+
+                <ContactButtons />
+                
             </div>
         </section>
   );
 }
 
-export default Hero;
+export default Prestation;

@@ -1,7 +1,7 @@
 function ContactButtons() {
   return (
 
-    <div className="text-center mb-5 py-5">
+    <div className="text-center mb-5 pt-5">
         <h5 className="prestations-title fw-bold">Contactez-nous dès maintenant pour un devis gratuit ou une intervention rapide !</h5>
     
         <div className="contact-buttons d-flex justify-content-center gap-3">

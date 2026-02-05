@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import UpLogo from "../assets/logo/upLogo1.svg";
 
 const Navbar = () => {
@@ -21,15 +22,15 @@ const Navbar = () => {
   }, [isOpen, isMenuVisible]);
 
   const links = [
-    { fr: "À propos", href: "#about" },
-    { fr: "Prestations", href: "#presta" },
-    { fr: "Chantiers", href: "#chantiers" },
-    { fr: "Devis", href: "#devis" },
-    { fr: "Contact", href: "#contact" },
+    {type : "a", fr: "À propos", href: "/#about" },
+    {type : "a", fr: "Prestations", href: "/#presta" },
+    {type : "a", fr: "Chantiers", href: "/#chantiers" },
+    {type : "a", fr: "Avis", href: "/#avis" },
+    {type : "route", fr: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" id="navbar">
       <div className="navbar-container">
         
         <img src={UpLogo} className="navbar-logo"/>
@@ -58,24 +59,36 @@ const Navbar = () => {
           >
             {links.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="navbar-link"
-                  onClick={() => setIsOpen(false)}
-                >
+                {link.type === "route" ? (
+                  <Link
+                    to={link.href}
+                    className="navbar-link"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.fr}
+                  </Link>
+                ) : (
+                  <Link to={link.href} className="navbar-link" onClick={() => setIsOpen(false)}>
                   {link.fr}
-                </a>
+                </Link>
+                )}
               </li>
             ))}
           </ul>
         )}
 
         <ul className="navbar-links d-none d-md-flex">
-          {links.map((link, index) => (
-            <li key={index}>
-              <a href={link.href} className="navbar-link">
-                {link.fr}
-              </a>
+          {links.map((link) => (
+            <li key={link.href}>
+              {link.type === "route" ? (
+                <Link to={link.href} className="navbar-link">
+                  {link.fr}
+                </Link>
+              ) : (
+                <Link to={link.href} className="navbar-link">
+                  {link.fr}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

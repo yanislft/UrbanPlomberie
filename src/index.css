@@ -30,6 +30,10 @@ html, body {
   overflow-y: auto;
 }
 
+body {
+  overscroll-behavior: none;
+}
+
 /************ Navbar **********/
 
   .navbar 

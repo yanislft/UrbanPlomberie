@@ -7,19 +7,32 @@ const Navbar = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen) 
+    {
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = "100%";
       setIsMenuVisible(true);
-      document.body.style.overflow = "hidden";
-      return;
-    }
-
-    document.body.style.overflow = "";
+    } 
     
-    if (isMenuVisible) {
-      const t = setTimeout(() => setIsMenuVisible(false), 400);
-      return () => clearTimeout(t);
+    else 
+    {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (scrollY) 
+      {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
+
+      if (isMenuVisible) 
+      {
+        const t = setTimeout(() => setIsMenuVisible(false), 400);
+        return () => clearTimeout(t);
+      }
     }
-  }, [isOpen, isMenuVisible]);
+  }, [isOpen]);
 
   const links = [
     {type : "a", fr: "À propos", href: "/#about" },

@@ -27,9 +27,9 @@ function Footer() {
           <div className="col-12 col-md-4 footer-col text-center text-md-start">
             <h4>Liens utiles</h4>
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="/mentions-legales">Mentions légales</a></li>
+              <li><a href="/#presta">Services</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/mentionslegales">Mentions légales</a></li>
             </ul>
           </div>
 

@@ -60,17 +60,17 @@ const Navbar = () => {
             {links.map((link) => (
               <li key={link.href}>
                 {link.type === "route" ? (
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="navbar-link"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.fr}
-                  </Link>
+                  </a>
                 ) : (
-                  <Link to={link.href} className="navbar-link" onClick={() => setIsOpen(false)}>
+                  <a href={link.href} className="navbar-link" onClick={() => setIsOpen(false)}>
                   {link.fr}
-                </Link>
+                </a>
                 )}
               </li>
             ))}
@@ -81,13 +81,13 @@ const Navbar = () => {
           {links.map((link) => (
             <li key={link.href}>
               {link.type === "route" ? (
-                <Link to={link.href} className="navbar-link">
+                <a href={link.href} className="navbar-link">
                   {link.fr}
-                </Link>
+                </a>
               ) : (
-                <Link to={link.href} className="navbar-link">
+                <a href={link.href} className="navbar-link">
                   {link.fr}
-                </Link>
+                </a>
               )}
             </li>
           ))}

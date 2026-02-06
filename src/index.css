@@ -827,10 +827,6 @@ html, body {
 
 /************ Page contact **********/
 
-/****************************
-        CONTACT – CLEAN
-****************************/
-
 .contact-page {
   background-color: #ffffff;
 }
@@ -915,3 +911,18 @@ html, body {
   }
 }
 
+/********************************************************************
+
+/************ Mentions légales **********/
+
+.mentions-legales h1 {
+  font-weight: 700;
+}
+
+.mentions-legales h3 {
+  margin-top: 1.5rem;
+}
+
+.mentions-legales p {
+  line-height: 1.7;
+}

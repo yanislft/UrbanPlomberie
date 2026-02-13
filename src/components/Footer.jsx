@@ -19,8 +19,8 @@ function Footer() {
             <h4>Contact</h4>
             <ul>
               <li>Cavaillon & alentours</li>
-              <li>06 12 34 56 78</li>
-              <li>urbanplomberie@gmail.com</li>
+              <li>07 79 43 29 85</li>
+              <li>faridridouh1@gmail.com</li>
             </ul>
           </div>
 

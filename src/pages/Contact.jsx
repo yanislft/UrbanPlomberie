@@ -66,15 +66,15 @@ function Contact() {
 
             <p className="mb-2">
               <strong>Téléphone :</strong><br />
-              <a href="tel:0612345678" className="text-decoration-none">
-                06 12 34 56 78
+              <a href="tel:+33779432985" className="text-decoration-none">
+                07 79 43 29 85
               </a>
             </p>
 
             <p className="mb-2">
               <strong>Email :</strong><br />
-              <a href="mailto:contact@plomberie.fr" className="text-decoration-none">
-                contact@plomberie.fr
+              <a href="mailto:faridridouh1@gmail.com" className="text-decoration-none">
+                faridridouh1@gmail.com
               </a>
             </p>
 

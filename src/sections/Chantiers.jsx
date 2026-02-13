@@ -1,12 +1,13 @@
-import avantChantier1 from "../assets/hero/hero1.jpg"
-import apresChantier1 from "../assets/hero/hero2.jpg"
+import chauffeEau from "../assets/chantiers/chauffeEau.jpg"
+import clarinette from "../assets/chantiers/clarinette.jpg"
+import cuisine from "../assets/chantiers/cuisine.jpg"
 
 function Chantiers() {
 
     const cardContent = [
-            { name: "Chantier1", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ante sit amet tellus ornare tincidunt." },
-            { name: "Chantier2", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ante sit amet tellus ornare tincidunt."  },
-            { name: "Chantier3", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ante sit amet tellus ornare tincidunt." },    
+            { name: "Cuisine", desc: "Installation complète des arrivées d’eau pour cuisine, comprenant le raccordement du robinet, la pose de la vasque ainsi que l’alimentation et l’évacuation du lave-vaisselle. Travail soigné et conforme aux normes en vigueur.", img :  cuisine },
+            { name: "Nourrice", desc: "Installation d’une nourrice de distribution en laiton avec vannes d’arrêt individuelles. Mise en place d’un réseau PER propre et organisé permettant une distribution optimisée et sécurisée de l’eau vers les différents points du logement.", img : clarinette  },
+            { name: "Ballon d'eau chaude", desc: "Installation d’un ballon d’eau chaude avec raccordement au réseau d’eau et au circuit électrique. Mise en place du groupe de sécurité et vérification complète de l’étanchéité pour garantir un fonctionnement fiable et sécurisé.", img : chauffeEau},    
         ];
 
   return (
@@ -29,21 +30,10 @@ function Chantiers() {
                 <div 
                   className="card chantier-card h-100 shadow-sm" 
                   onClick={(e) => e.currentTarget.classList.toggle("is-after")}>
-                    <div className="image-wrapper">
+                    <div className="image-chantier">
                         <img
-                        src={avantChantier1}
-                        className="img-avant"
-                        alt="Avant travaux"
+                        src={content.img}
                         />
-
-                        <img
-                        src={apresChantier1}
-                        className="img-apres"
-                        alt="Après travaux"
-                        />
-
-                        <span className="badge-chantier badge-avant">Avant</span>
-                        <span className="badge-chantier badge-apres">Après</span>
                     </div>
 
                     <div className="card-body">

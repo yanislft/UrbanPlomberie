@@ -11,8 +11,8 @@ function MentionsLegales() {
             Entreprise individuelle<br />
             Responsable de la publication : Farid<br />
             Localisation : Cavaillon & alentours<br />
-            Téléphone : 06 12 34 56 78<br />
-            Email : urbanplomberie@gmail.com
+            Téléphone : 07 79 43 29 85<br />
+            Email : faridridouh1@gmail.com
           </p>
         </section>
 

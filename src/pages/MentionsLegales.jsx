@@ -19,11 +19,10 @@ function MentionsLegales() {
         <section className="mb-4">
           <h3>Hébergement</h3>
           <p>
-            OVH<br />
-            2 rue Kellermann<br />
-            59100 Roubaix – France<br />
-            Téléphone : 1007<br />
-            Site : www.ovh.com
+            Netlify, Inc. <br />
+            44 Montgomery Street, Suite 300 <br />
+            San Francisco, California 94104 - États-Unis <br />
+            Site web : https://www.netlify.com
           </p>
         </section>
 

@@ -8,7 +8,7 @@ function Footer() {
         <div className="row">
 
           <div className="col-12 col-md-4 footer-col text-center text-md-start">
-            <img src={UpLogo} className="footer-logo mb-3" alt="Urban Plomberie" />
+            <img src={UpLogo} className="footer-logo mb-3" alt="UrbanPlomberieLogo" />
             <p>
               Dépannage, installation et entretien de vos équipements de plomberie.
               Intervention rapide et travail soigné.

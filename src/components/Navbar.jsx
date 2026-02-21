@@ -46,7 +46,7 @@ const Navbar = () => {
     <nav className="navbar" id="navbar">
       <div className="navbar-container">
         
-        <img src={UpLogo} className="navbar-logo"/>
+        <img src={UpLogo} className="navbar-logo" alt="UrbanPlomberieLogo"/>
 
         <label className="burger d-md-none" htmlFor="burger">
           <input

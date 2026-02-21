@@ -33,6 +33,7 @@ function Prestation() {
                                 <img
                                     src={content.img}
                                     className="card-img-top"
+                                    alt="prestationImage"
                                 />
                                 <div className="card-body text-center">
                                     <h5 className="prestations-title fw-bold">{content.name}</h5>

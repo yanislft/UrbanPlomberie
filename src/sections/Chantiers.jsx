@@ -33,6 +33,7 @@ function Chantiers() {
                     <div className="image-chantier">
                         <img
                         src={content.img}
+                        alt="imageChantier"
                         />
                     </div>
 

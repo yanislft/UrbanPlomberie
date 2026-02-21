@@ -9,7 +9,7 @@ function MentionsLegales() {
           <p>
             <strong>Urban Plomberie</strong><br />
             Entreprise individuelle<br />
-            Responsable de la publication : Farid<br />
+            Responsable de la publication : Farid Ridouh<br />
             Localisation : Cavaillon & alentours<br />
             Téléphone : 07 79 43 29 85<br />
             Email : faridridouh1@gmail.com

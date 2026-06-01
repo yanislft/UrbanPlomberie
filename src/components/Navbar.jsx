@@ -54,7 +54,7 @@ const Navbar = () => {
               <span className="t"><small>Urgence 24H/24</small><b>Nous appeler</b></span>
             </a>
             <a href="/contact" className="up-btn up-btn-quote">Demander un devis</a>
-            <button className="up-burger" onClick={() => setOpen(o => !o)} aria-label="Menu">
+            <button className={`up-burger${open ? " is-open" : ""}`} onClick={() => setOpen(o => !o)} aria-label="Menu">
               <span /><span /><span />
             </button>
           </div>

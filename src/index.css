@@ -341,18 +341,27 @@ section { scroll-margin-top: var(--navbar-height); }
 .reveal.d4 { transition-delay: .28s }
 
 /* ============ RESPONSIVE ============ */
+
+/* Tablet (768–1024px) : liens visibles, pas de texte téléphone, pas de bouton devis */
+@media (max-width: 1024px) {
+  .up-nav-phone .t { display: none; }
+  .up-nav-cta .up-btn-quote { display: none; }
+}
+
+/* Tablet medium (768–980px) : grilles 2 colonnes */
 @media (max-width: 980px) {
   .value-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr 1fr; }
   .rev-grid > :last-child { grid-column: 1 / -1; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 680px) {
+/* Mobile (<768px) : burger + menu overlay */
+@media (max-width: 768px) {
   body { font-size: 16px; padding-bottom: 74px; }
-  .up-nav-links, .up-nav-phone .t { display: none; }
+  .up-nav-links { display: none; }
+  .up-nav-phone { display: none; }
   .up-burger { display: flex; margin-left: auto; }
-  .up-nav-cta .up-btn-quote { display: none; }
-  .up-hero { min-height: auto; padding: 120px 0 70px; }
+  .up-hero { min-height: auto; padding: 110px 0 60px; }
   .up-block { padding: 64px 0; }
   .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr; }
   .rev-grid > :last-child { grid-column: auto; }
@@ -362,6 +371,11 @@ section { scroll-margin-top: var(--navbar-height); }
   .mobile-bar { display: flex; }
   .scroll-cue { display: none; }
 }
+
+/* Burger animé en croix quand ouvert */
+.up-burger.is-open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.up-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.up-burger.is-open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* Contact & mentions légales pages */
 .contact-page, .mentions-legales {

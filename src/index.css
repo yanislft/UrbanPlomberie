@@ -90,19 +90,12 @@ section { scroll-margin-top: var(--navbar-height); }
 }
 .up-nav { display: flex; align-items: center; gap: 28px; height: 78px; }
 .up-brand {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.04em;
-  color: var(--white); transition: color .3s;
+  display: flex; align-items: center;
 }
-.up-header.scrolled .up-brand { color: var(--ink); }
-.up-brand .mark {
-  width: 42px; height: 42px; border-radius: 11px; flex: none;
-  background: linear-gradient(150deg, var(--blue-bright) 0%, var(--blue-deep) 100%);
-  display: grid; place-items: center; box-shadow: 0 4px 12px oklch(0.55 0.16 248 / .4);
+.up-brand-logo {
+  height: 64px; width: auto; display: block;
+  transition: filter .3s;
 }
-.up-brand .mark svg { width: 23px; height: 23px; }
-.up-brand b { color: var(--blue-bright); font-weight: 900; }
-.up-header.scrolled .up-brand b { color: var(--blue-deep); }
 
 .up-nav-links { display: flex; gap: 2px; margin-left: 8px; list-style: none; }
 .up-nav-links a {

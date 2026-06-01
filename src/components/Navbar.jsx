@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="up-nav-cta">
             <a href="tel:+33779432986" className="up-nav-phone">
               <span className="ic"><PhoneIcon /></span>
-              <span className="t"><small>Urgence 24H/24</small><b>07 79 43 29 86</b></span>
+              <span className="t"><small>Urgence 24H/24</small><b>Nous appeler</b></span>
             </a>
             <a href="/contact" className="up-btn up-btn-quote">Demander un devis</a>
             <button className="up-burger" onClick={() => setOpen(o => !o)} aria-label="Menu">

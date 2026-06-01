@@ -419,22 +419,22 @@ section { scroll-margin-top: var(--navbar-height); }
   .up-wrap       { padding: 0 22px; }
 
   /* ── Hero ── */
-  .up-hero { padding: 100px 0 64px; min-height: auto; }
-  .up-hero-content h1    { font-size: 52px; line-height: 1.08; }
-  .up-hero-content .lede { font-size: 20px; margin-top: 20px; line-height: 1.65; }
-  .badge-row    { margin-bottom: 28px; gap: 10px; }
-  .pill         { font-size: 15px; padding: 10px 16px; }
-  .hero-actions { margin-top: 36px; flex-direction: column; align-items: stretch; gap: 14px; }
+  .up-hero { padding: 104px 0 68px; min-height: auto; }
+  .up-hero-content h1    { font-size: 62px; line-height: 1.06; }
+  .up-hero-content .lede { font-size: 22px; margin-top: 22px; line-height: 1.65; }
+  .badge-row    { margin-bottom: 30px; }
+  .pill         { font-size: 16px; padding: 11px 18px; }
+  .hero-actions { margin-top: 38px; flex-direction: column; align-items: stretch; gap: 14px; }
   .hero-actions .call-fab { display: none; }
-  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 22px; font-size: 19px; border-radius: 14px; }
-  .hero-note  { font-size: 16px; margin-top: 24px; }
+  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 24px; font-size: 20px; border-radius: 14px; }
+  .hero-note  { font-size: 17px; margin-top: 26px; }
   .scroll-cue { display: none; }
 
   /* ── Sections ── */
-  .up-block { padding: 72px 0; }
-  .sec-head { margin-bottom: 48px; }
-  .sec-head h2 { font-size: 38px; }
-  .sec-head p  { font-size: 19px; }
+  .up-block { padding: 80px 0; }
+  .sec-head { margin-bottom: 52px; }
+  .sec-head h2 { font-size: 44px; }
+  .sec-head p  { font-size: 21px; }
 
   /* ── Grilles → 1 colonne ── */
   .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr !important; }
@@ -443,45 +443,45 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-grid { grid-template-columns: 1fr; }
 
   /* ── À propos ── */
-  .up-about-lede { font-size: 19px; line-height: 1.7; }
-  .value    { padding: 32px 28px; }
-  .value h3 { font-size: 26px; }
-  .value p  { font-size: 17px; }
+  .up-about-lede { font-size: 21px; line-height: 1.7; }
+  .value    { padding: 36px 30px; }
+  .value h3 { font-size: 29px; }
+  .value p  { font-size: 19px; }
 
   /* ── Prestations ── */
-  .svc-media    { height: 240px; }
-  .svc-body     { padding: 28px; }
-  .svc-body h3  { font-size: 26px; }
-  .svc-body p   { font-size: 17px; }
-  .svc-more     { font-size: 17px; margin-top: 22px; }
+  .svc-media    { height: 250px; }
+  .svc-body     { padding: 30px; }
+  .svc-body h3  { font-size: 29px; }
+  .svc-body p   { font-size: 19px; }
+  .svc-more     { font-size: 19px; margin-top: 24px; }
 
   /* ── Chantiers ── */
-  .chantier-media       { height: 220px; }
-  .chantier-body-new    { padding: 28px; }
-  .chantier-body-new h3 { font-size: 24px; }
-  .chantier-body-new p  { font-size: 16.5px; }
+  .chantier-media       { height: 230px; }
+  .chantier-body-new    { padding: 30px; }
+  .chantier-body-new h3 { font-size: 27px; }
+  .chantier-body-new p  { font-size: 18px; }
 
   /* ── CTA band ── */
   .up-cta-band { padding: 20px 0; }
-  .cta-inner   { padding: 40px 28px; flex-direction: column; align-items: stretch; gap: 28px; border-radius: 22px; }
-  .cta-inner h2 { font-size: 32px; }
-  .cta-inner p  { font-size: 18px; }
+  .cta-inner   { padding: 44px 30px; flex-direction: column; align-items: stretch; gap: 30px; border-radius: 22px; }
+  .cta-inner h2 { font-size: 36px; }
+  .cta-inner p  { font-size: 20px; }
   .cta-actions  { flex-direction: column; align-items: stretch; gap: 14px; }
   .cta-actions .call-fab { display: none; }
-  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 22px; font-size: 19px; border-radius: 14px; }
+  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 24px; font-size: 20px; border-radius: 14px; }
 
   /* ── Reviews ── */
-  .rev-summary  { padding: 24px 26px; gap: 20px; }
-  .rev-summary .score { font-size: 40px; }
+  .rev-summary  { padding: 26px 28px; gap: 20px; }
+  .rev-summary .score { font-size: 46px; }
   .rev-summary .vline { display: none; }
-  .rev   { padding: 26px; }
-  .rev p { font-size: 17px; line-height: 1.65; }
-  .rev .rev-who b { font-size: 17px; }
+  .rev   { padding: 28px; }
+  .rev p { font-size: 18px; line-height: 1.65; }
+  .rev .rev-who b { font-size: 18px; }
 
   /* ── Footer ── */
-  .up-footer { padding: 60px 0 36px; }
-  .foot-grid { gap: 40px; }
-  .foot-col a, .foot-col span { font-size: 17px; }
+  .up-footer { padding: 64px 0 40px; }
+  .foot-grid { gap: 44px; }
+  .foot-col a, .foot-col span { font-size: 18px; }
 
   /* ── Contact ── */
   .contact-form-box button { width: 100%; justify-content: center; }

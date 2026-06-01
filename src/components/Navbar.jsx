@@ -1,114 +1,81 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import UpLogo from "../assets/logo/upLogo1.svg";
+
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+  </svg>
+);
+
+const DropIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M12 2c-3.2 4-5.5 7-5.5 10.2A5.5 5.5 0 0 0 12 17.7a5.5 5.5 0 0 0 5.5-5.5C17.5 9 15.2 6 12 2Z" fill="white"/>
+  </svg>
+);
+
+const links = [
+  { fr: "À propos", href: "/#about" },
+  { fr: "Prestations", href: "/#presta" },
+  { fr: "Chantiers", href: "/#chantiers" },
+  { fr: "Avis", href: "/#avis" },
+  { fr: "Contact", href: "/contact" },
+];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-
-  const restoreScroll = () => {
-    const scrollY = document.body.style.top;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
-    }
-  };
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = "100%";
-      setIsMenuVisible(true);
-    } else {
-      restoreScroll();
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-      if (isMenuVisible) {
-        const t = setTimeout(() => setIsMenuVisible(false), 400);
-        return () => clearTimeout(t);
-      }
-    }
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
-    return () => {
-      if (isOpen) restoreScroll();
-    };
-  }, [isOpen]);
-
-  const links = [
-    {type : "a", fr: "À propos", href: "/#about" },
-    {type : "a", fr: "Prestations", href: "/#presta" },
-    {type : "a", fr: "Chantiers", href: "/#chantiers" },
-    {type : "a", fr: "Avis", href: "/#avis" },
-    {type : "route", fr: "Contact", href: "/contact" },
-  ];
+  const close = () => setOpen(false);
 
   return (
-    <nav className="navbar" id="navbar">
-      <div className="navbar-container">
-        
-        <img src={UpLogo} className="navbar-logo" alt="UrbanPlomberieLogo" href="/" />
+    <>
+      <header id="navbar" className={`up-header${scrolled ? " scrolled" : ""}`}>
+        <div className="up-wrap up-nav">
+          <a href="/" className="up-brand" aria-label="Urban Plomberie accueil">
+            <span className="mark"><DropIcon /></span>
+            Urban<b>Plomberie</b>
+          </a>
 
-        <label className="burger d-md-none" htmlFor="burger">
-          <input
-            type="checkbox"
-            id="burger"
-            checked={isOpen}
-            onChange={(e) => {
-              const checked = e.target.checked;
-              if (checked) setIsMenuVisible(true);
-              setIsOpen(checked);
-            }}
-          />
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        {isMenuVisible && (
-          <ul
-            className={`navbar-links d-md-none ${
-              isOpen ? "scale-in-hor-right" : "scale-out-hor-right"
-            }`}
-          >
-            {links.map((link) => (
-              <li key={link.href}>
-                {link.type === "route" ? (
-                  <a
-                    href={link.href}
-                    className="navbar-link"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.fr}
-                  </a>
-                ) : (
-                  <a href={link.href} className="navbar-link" onClick={() => setIsOpen(false)}>
-                  {link.fr}
-                </a>
-                )}
-              </li>
+          <ul className="up-nav-links">
+            {links.map(l => (
+              <li key={l.href}><a href={l.href}>{l.fr}</a></li>
             ))}
           </ul>
-        )}
 
-        <ul className="navbar-links d-none d-md-flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              {link.type === "route" ? (
-                <a href={link.href} className="navbar-link">
-                  {link.fr}
-                </a>
-              ) : (
-                <a href={link.href} className="navbar-link">
-                  {link.fr}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+          <div className="up-nav-cta">
+            <a href="tel:+33779432986" className="up-nav-phone">
+              <span className="ic"><PhoneIcon /></span>
+              <span className="t"><small>Urgence 24H/24</small><b>07 79 43 29 86</b></span>
+            </a>
+            <a href="/contact" className="up-btn up-btn-quote">Demander un devis</a>
+            <button className="up-burger" onClick={() => setOpen(o => !o)} aria-label="Menu">
+              <span /><span /><span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`up-mnav${open ? " open" : ""}`}>
+        {links.map(l => (
+          <a key={l.href} href={l.href} onClick={close}>{l.fr}</a>
+        ))}
+        <a href="tel:+33779432986" className="up-btn up-btn-call" onClick={close}>
+          <PhoneIcon /> Appeler · 07 79 43 29 86
+        </a>
+        <a href="/contact" className="up-btn up-btn-quote" onClick={close}>Demander un devis</a>
       </div>
-    </nav>
+    </>
   );
 };
 

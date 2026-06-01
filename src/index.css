@@ -147,7 +147,6 @@ section { scroll-margin-top: var(--navbar-height); }
 }
 .up-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('/src/assets/hero/hero1.jpg');
   background-size: cover; background-position: center;
 }
 .up-hero-bg::after {
@@ -422,10 +421,12 @@ section { scroll-margin-top: var(--navbar-height); }
   .nav-btn-devis { display: none; }
 
   /* Hero */
-  .up-hero { padding: 90px 0 56px; min-height: 92vh; }
-  .up-hero-content h1 { font-size: 34px; }
-  .up-hero-content .lede { font-size: 16px; }
-  .badge-row { gap: 8px; }
+  .up-hero { padding: 86px 0 48px; min-height: auto; }
+  .up-hero-content h1 { font-size: 30px; }
+  .up-hero-content .lede { font-size: 15px; margin-top: 14px; }
+  .hero-actions { margin-top: 24px; }
+  .hero-note { margin-top: 16px; font-size: 13px; }
+  .badge-row { gap: 8px; margin-bottom: 18px; }
   .pill { font-size: 12px; padding: 6px 12px; }
   .scroll-cue { display: none; }
 

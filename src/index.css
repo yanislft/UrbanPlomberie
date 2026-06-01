@@ -123,9 +123,7 @@ section { scroll-margin-top: var(--navbar-height); }
 
 /* mobile nav overlay */
 .up-mnav {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+  display: block !important;
   position: fixed;
   top: var(--navbar-height);
   left: 0; right: 0; bottom: 0;
@@ -133,12 +131,6 @@ section { scroll-margin-top: var(--navbar-height); }
   background: var(--paper);
   padding: 24px;
   overflow-y: auto;
-  transition: opacity .25s ease, visibility .25s;
-}
-.up-mnav.open {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
 }
 .up-mnav a {
   display: block; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px;

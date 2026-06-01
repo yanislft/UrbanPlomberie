@@ -124,10 +124,12 @@ section { scroll-margin-top: var(--navbar-height); }
 /* mobile nav overlay */
 .up-mnav {
   display: block !important;
-  position: fixed;
-  top: var(--navbar-height);
-  left: 0; right: 0; bottom: 0;
-  z-index: 49;
+  position: fixed !important;
+  top: 78px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9999 !important;
   background: var(--paper);
   padding: 24px;
   overflow-y: auto;

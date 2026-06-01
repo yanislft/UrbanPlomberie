@@ -9,22 +9,17 @@ const PhoneIcon = () => (
 );
 
 const links = [
-  { fr: "À propos",   href: "/#about" },
+  { fr: "À propos",    href: "/#about" },
   { fr: "Prestations", href: "/#presta" },
-  { fr: "Chantiers",  href: "/#chantiers" },
-  { fr: "Avis",       href: "/#avis" },
-  { fr: "Contact",    href: "/contact" },
+  { fr: "Chantiers",   href: "/#chantiers" },
+  { fr: "Avis",        href: "/#avis" },
+  { fr: "Contact",     href: "/contact" },
 ];
-
-const MOBILE_BP  = 768;
-const TABLET_BP  = 1024;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
-  const [width, setWidth]       = useState(() => window.innerWidth);
 
-  /* scroll → header opaque */
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     handler();
@@ -32,32 +27,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  /* track window width */
-  useEffect(() => {
-    const handler = () => {
-      setWidth(window.innerWidth);
-      if (window.innerWidth > MOBILE_BP) setOpen(false);
-    };
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler);
-  }, []);
-
-  /* lock body scroll when menu open */
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  const isMobile = width <= MOBILE_BP;
-  const isTablet = width <= TABLET_BP;
-  const close    = () => setOpen(false);
+  const close = () => setOpen(false);
 
   return (
     <>
       <header id="navbar" className={`up-header${scrolled ? " scrolled" : ""}`}>
         <div className="up-wrap up-nav">
 
-          {/* Logo */}
           <a href="/" className="up-brand" aria-label="Urban Plomberie accueil">
             <img
               src={scrolled ? LogoColor : LogoWhite}
@@ -66,60 +47,42 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Liens desktop/tablette */}
-          {!isMobile && (
-            <ul className="up-nav-links">
-              {links.map(l => (
-                <li key={l.href}><a href={l.href}>{l.fr}</a></li>
-              ))}
-            </ul>
-          )}
+          <ul className="up-nav-links">
+            {links.map(l => (
+              <li key={l.href}><a href={l.href}>{l.fr}</a></li>
+            ))}
+          </ul>
 
-          {/* CTA à droite */}
           <div className="up-nav-cta">
-            {/* Téléphone — icône seule sur tablette, avec texte sur desktop */}
-            {!isMobile && (
-              <a href="tel:+33779432986" className="up-nav-phone">
-                <span className="ic"><PhoneIcon /></span>
-                {!isTablet && (
-                  <span className="t">
-                    <small>Urgence 24H/24</small>
-                    <b>Nous appeler</b>
-                  </span>
-                )}
-              </a>
-            )}
-
-            {/* Bouton devis — desktop uniquement */}
-            {!isTablet && (
-              <a href="/contact" className="up-btn up-btn-quote">Demander un devis</a>
-            )}
-
-            {/* Burger — mobile uniquement */}
-            {isMobile && (
-              <button
-                className={`up-burger${open ? " is-open" : ""}`}
-                onClick={() => setOpen(o => !o)}
-                aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-              >
-                <span /><span /><span />
-              </button>
-            )}
+            <a href="tel:+33779432986" className="up-nav-phone">
+              <span className="ic"><PhoneIcon /></span>
+              <span className="t">
+                <small>Urgence 24H/24</small>
+                <b>Nous appeler</b>
+              </span>
+            </a>
+            <a href="/contact" className="up-btn up-btn-quote nav-btn-devis">Demander un devis</a>
+            <button
+              className={`up-burger${open ? " is-open" : ""}`}
+              onClick={() => setOpen(o => !o)}
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            >
+              <span /><span /><span />
+            </button>
           </div>
 
         </div>
       </header>
 
-      {/* Menu mobile overlay */}
-      {isMobile && open && (
+      {open && (
         <div className="up-mnav">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={close}>{l.fr}</a>
           ))}
-          <a href="tel:+33779432986" className="up-btn up-btn-call" onClick={close}>
+          <a href="tel:+33779432986" className="up-btn up-btn-call mnav-btn" onClick={close}>
             <PhoneIcon /> Appeler · 07 79 43 29 86
           </a>
-          <a href="/contact" className="up-btn up-btn-quote" onClick={close}>
+          <a href="/contact" className="up-btn up-btn-quote mnav-btn" onClick={close}>
             Demander un devis
           </a>
         </div>

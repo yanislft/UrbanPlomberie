@@ -420,21 +420,21 @@ section { scroll-margin-top: var(--navbar-height); }
 
   /* ── Hero ── */
   .up-hero { padding: 108px 0 72px; min-height: auto; }
-  .up-hero-content h1    { font-size: 80px; line-height: 1.02; }
-  .up-hero-content .lede { font-size: 26px; margin-top: 26px; line-height: 1.6; }
-  .badge-row    { margin-bottom: 32px; }
-  .pill         { font-size: 18px; padding: 13px 20px; }
-  .hero-actions { margin-top: 42px; flex-direction: column; align-items: stretch; gap: 16px; }
+  .up-hero-content h1    { font-size: 100px; line-height: 1.0; }
+  .up-hero-content .lede { font-size: 30px; margin-top: 28px; line-height: 1.6; }
+  .badge-row    { margin-bottom: 34px; }
+  .pill         { font-size: 20px; padding: 14px 22px; }
+  .hero-actions { margin-top: 44px; flex-direction: column; align-items: stretch; gap: 16px; }
   .hero-actions .call-fab { display: none; }
-  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 26px; font-size: 22px; border-radius: 16px; }
-  .hero-note  { font-size: 19px; margin-top: 28px; }
+  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 28px; font-size: 24px; border-radius: 16px; }
+  .hero-note  { font-size: 21px; margin-top: 30px; }
   .scroll-cue { display: none; }
 
   /* ── Sections ── */
-  .up-block { padding: 88px 0; }
-  .sec-head { margin-bottom: 56px; }
-  .sec-head h2 { font-size: 52px; }
-  .sec-head p  { font-size: 24px; }
+  .up-block { padding: 96px 0; }
+  .sec-head { margin-bottom: 60px; }
+  .sec-head h2 { font-size: 62px; }
+  .sec-head p  { font-size: 27px; }
 
   /* ── Grilles → 1 colonne ── */
   .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr !important; }
@@ -443,45 +443,45 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-grid { grid-template-columns: 1fr; }
 
   /* ── À propos ── */
-  .up-about-lede { font-size: 24px; line-height: 1.7; }
-  .value    { padding: 40px 32px; }
-  .value h3 { font-size: 34px; }
-  .value p  { font-size: 22px; }
+  .up-about-lede { font-size: 27px; line-height: 1.65; }
+  .value    { padding: 44px 36px; }
+  .value h3 { font-size: 40px; }
+  .value p  { font-size: 25px; }
 
   /* ── Prestations ── */
-  .svc-media    { height: 260px; }
-  .svc-body     { padding: 34px; }
-  .svc-body h3  { font-size: 34px; }
-  .svc-body p   { font-size: 22px; }
-  .svc-more     { font-size: 22px; margin-top: 26px; }
+  .svc-media    { height: 280px; }
+  .svc-body     { padding: 38px; }
+  .svc-body h3  { font-size: 40px; }
+  .svc-body p   { font-size: 25px; }
+  .svc-more     { font-size: 25px; margin-top: 28px; }
 
   /* ── Chantiers ── */
-  .chantier-media       { height: 240px; }
-  .chantier-body-new    { padding: 34px; }
-  .chantier-body-new h3 { font-size: 32px; }
-  .chantier-body-new p  { font-size: 21px; }
+  .chantier-media       { height: 260px; }
+  .chantier-body-new    { padding: 38px; }
+  .chantier-body-new h3 { font-size: 38px; }
+  .chantier-body-new p  { font-size: 24px; }
 
   /* ── CTA band ── */
   .up-cta-band { padding: 20px 0; }
-  .cta-inner   { padding: 48px 32px; flex-direction: column; align-items: stretch; gap: 32px; border-radius: 24px; }
-  .cta-inner h2 { font-size: 44px; }
-  .cta-inner p  { font-size: 24px; }
+  .cta-inner   { padding: 52px 36px; flex-direction: column; align-items: stretch; gap: 36px; border-radius: 24px; }
+  .cta-inner h2 { font-size: 52px; }
+  .cta-inner p  { font-size: 27px; }
   .cta-actions  { flex-direction: column; align-items: stretch; gap: 16px; }
   .cta-actions .call-fab { display: none; }
-  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 26px; font-size: 22px; border-radius: 16px; }
+  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 28px; font-size: 24px; border-radius: 16px; }
 
   /* ── Reviews ── */
-  .rev-summary  { padding: 28px 30px; gap: 22px; }
-  .rev-summary .score { font-size: 54px; }
+  .rev-summary  { padding: 30px 32px; gap: 24px; }
+  .rev-summary .score { font-size: 64px; }
   .rev-summary .vline { display: none; }
-  .rev   { padding: 32px; }
-  .rev p { font-size: 21px; line-height: 1.65; }
-  .rev .rev-who b { font-size: 21px; }
+  .rev   { padding: 36px; }
+  .rev p { font-size: 24px; line-height: 1.65; }
+  .rev .rev-who b { font-size: 24px; }
 
   /* ── Footer ── */
-  .up-footer { padding: 72px 0 44px; }
-  .foot-grid { gap: 48px; }
-  .foot-col a, .foot-col span { font-size: 20px; }
+  .up-footer { padding: 80px 0 48px; }
+  .foot-grid { gap: 52px; }
+  .foot-col a, .foot-col span { font-size: 22px; }
 
   /* ── Contact ── */
   .contact-form-box button { width: 100%; justify-content: center; }

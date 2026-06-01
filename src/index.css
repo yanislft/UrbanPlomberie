@@ -126,11 +126,11 @@ section { scroll-margin-top: var(--navbar-height); }
   display: flex !important;
   flex-direction: column;
   position: fixed !important;
-  top: var(--navbar-height);
-  left: 0; right: 0; bottom: 0;
-  z-index: 9999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 48; /* sous le header (z-index:50) */
   background: var(--navy);
-  padding: 32px 24px 40px;
+  padding-top: var(--navbar-height);
+  padding-left: 24px; padding-right: 24px; padding-bottom: 40px;
   overflow-y: auto;
 }
 .up-mnav a.mnav-link {
@@ -454,18 +454,18 @@ section { scroll-margin-top: var(--navbar-height); }
   :root { --navbar-height: 64px; }
 
   /* ── Navbar ── */
-  :root { --navbar-height: 110px; }
-  .up-nav        { height: 110px; }
+  :root { --navbar-height: 140px; }
+  .up-nav        { height: 140px; }
   .up-nav-links  { display: none !important; }
   .up-nav-phone  { display: none !important; }
   .nav-btn-devis { display: none !important; }
-  .up-burger     { display: flex !important; margin-left: auto; gap: 8px; }
-  .up-burger span { width: 42px; height: 4px; }
-  .up-brand-logo { height: 88px; }
+  .up-burger     { display: flex !important; margin-left: auto; gap: 10px; }
+  .up-burger span { width: 48px; height: 5px; border-radius: 3px; }
+  .up-brand-logo { height: 108px; }
   .up-wrap       { padding: 0 24px; }
 
   /* ── Hero ── */
-  .up-hero { padding: 108px 0 72px; min-height: auto; }
+  .up-hero { padding: 160px 0 72px; min-height: auto; }
   .up-hero-content h1    { font-size: 100px; line-height: 1.0; }
   .up-hero-content .lede { font-size: 30px; margin-top: 28px; line-height: 1.6; }
   .badge-row    { margin-bottom: 34px; }
@@ -536,7 +536,9 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-submit { font-size: 20px; padding: 22px; }
 }
 
-/* Burger animé → croix */
-.up-burger.is-open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+/* Burger animé → croix
+   gap:10px + height:5px → décalage = height + gap = 15px */
+.up-burger span { transition: transform .3s ease, opacity .3s ease; }
+.up-burger.is-open span:nth-child(1) { transform: translateY(15px) rotate(45deg); }
 .up-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.up-burger.is-open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+.up-burger.is-open span:nth-child(3) { transform: translateY(-15px) rotate(-45deg); }

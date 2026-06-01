@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import MentionsLegales from './pages/MentionsLegales';
 
-import 'animate.css';
 
 function App() {
 

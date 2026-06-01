@@ -16,7 +16,7 @@ const links = [
   { fr: "Contact",     href: "/contact" },
 ];
 
-const MOBILE = 768;
+const MOBILE = 1024;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

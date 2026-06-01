@@ -393,12 +393,6 @@ section { scroll-margin-top: var(--navbar-height); }
 
 /* ============ RESPONSIVE ============ */
 
-/* Tablette large (≤1100px) */
-@media (max-width: 1100px) {
-  .up-nav-phone .t { display: none; }
-  .nav-btn-devis   { display: none; }
-}
-
 /* Tablette (≤900px) : grilles 2 colonnes */
 @media (max-width: 900px) {
   .value-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr 1fr; }
@@ -406,13 +400,13 @@ section { scroll-margin-top: var(--navbar-height); }
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* ============ MOBILE (≤768px) ============ */
-@media (max-width: 768px) {
+/* ============ MOBILE (≤1024px) ============ */
+@media (max-width: 1024px) {
   :root { --navbar-height: 64px; }
 
   body { padding-bottom: 80px; }
 
-  /* ── Navbar (CSS backup — React gère déjà le rendu conditionnel) ── */
+  /* ── Navbar ── */
   .up-nav        { height: 64px; }
   .up-nav-links  { display: none !important; }
   .up-nav-phone  { display: none !important; }
@@ -439,6 +433,7 @@ section { scroll-margin-top: var(--navbar-height); }
 
   /* ── Grilles → 1 colonne ── */
   .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr !important; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
   .rev-grid > :last-child { grid-column: auto; }
   .foot-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }

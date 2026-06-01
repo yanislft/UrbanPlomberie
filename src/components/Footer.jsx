@@ -1,8 +1,4 @@
-const DropIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M12 2c-3.2 4-5.5 7-5.5 10.2A5.5 5.5 0 0 0 12 17.7a5.5 5.5 0 0 0 5.5-5.5C17.5 9 15.2 6 12 2Z" fill="white"/>
-  </svg>
-);
+import LogoWhite from "../assets/logo/upLogo1White.svg";
 
 function Footer() {
   return (
@@ -12,8 +8,7 @@ function Footer() {
 
           <div>
             <div className="foot-brand">
-              <span className="mark"><DropIcon /></span>
-              Urban<b>Plomberie</b>
+              <img src={LogoWhite} alt="Urban Plomberie" style={{ height: 60, width: "auto" }} />
             </div>
             <p className="desc">
               Dépannage, installation et entretien de vos équipements de plomberie.

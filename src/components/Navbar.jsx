@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import LogoWhite from "../assets/logo/upLogo1White.svg";
 import LogoColor from "../assets/logo/upLogo1.svg";
 
@@ -19,6 +20,8 @@ const links = [
 const MOBILE = 1024;
 
 export default function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
   const mq = typeof window !== 'undefined' ? window.matchMedia(`(max-width: ${MOBILE}px)`) : null;
@@ -48,11 +51,11 @@ export default function Navbar() {
 
   return (
     <>
-      <header id="navbar" className={`up-header${scrolled ? " scrolled" : ""}`}>
+      <header id="navbar" className={`up-header${(scrolled || !isHome) ? " scrolled" : ""}`}>
         <div className="up-wrap up-nav">
 
           <a href="/" className="up-brand" aria-label="Urban Plomberie accueil">
-            <img src={scrolled ? LogoColor : LogoWhite} alt="Urban Plomberie" className="up-brand-logo" />
+            <img src={(scrolled || !isHome) ? LogoColor : LogoWhite} alt="Urban Plomberie" className="up-brand-logo" />
           </a>
 
           {!mobile && (

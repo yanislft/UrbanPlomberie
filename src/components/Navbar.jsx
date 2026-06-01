@@ -87,13 +87,17 @@ export default function Navbar() {
 
       {mobile && open && (
         <div className="up-mnav">
-          {links.map(l => <a key={l.href} href={l.href} onClick={close}>{l.fr}</a>)}
-          <a href="tel:+33779432986" className="up-btn up-btn-call" onClick={close} style={{ marginTop: 24 }}>
-            <PhoneIcon /> 07 79 43 29 86
-          </a>
-          <a href="/contact" className="up-btn up-btn-quote" onClick={close} style={{ marginTop: 12 }}>
-            Demander un devis
-          </a>
+          {links.map(l => (
+            <a key={l.href} href={l.href} className="mnav-link" onClick={close}>{l.fr}</a>
+          ))}
+          <div className="mnav-cta">
+            <a href="tel:+33779432986" className="up-btn up-btn-call" onClick={close}>
+              <PhoneIcon /> 07 79 43 29 86
+            </a>
+            <a href="/contact" className="up-btn up-btn-quote" onClick={close}>
+              Demander un devis
+            </a>
+          </div>
         </div>
       )}
     </>

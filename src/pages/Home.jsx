@@ -31,15 +31,6 @@ function CtaBand({ title, sub }) {
   );
 }
 
-function MobileBar() {
-  return (
-    <div className="mobile-bar">
-      <a href="tel:+33779432986" className="up-btn up-btn-call"><PhoneIcon /> Appeler</a>
-      <a href="/contact" className="up-btn up-btn-quote">Devis</a>
-    </div>
-  );
-}
-
 function Home() {
   const location = useLocation();
 
@@ -57,7 +48,9 @@ function Home() {
 
   useEffect(() => {
     const io = new IntersectionObserver(
-      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }),
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
@@ -79,7 +72,6 @@ function Home() {
         sub="On vous répond vite et on chiffre avant de commencer."
       />
       <GoogleReviews />
-      <MobileBar />
     </>
   );
 }

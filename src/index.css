@@ -393,99 +393,93 @@ section { scroll-margin-top: var(--navbar-height); }
 
 /* ============ RESPONSIVE ============ */
 
-/* Tablette (≤1024px) */
-@media (max-width: 1024px) {
+/* Tablette large (≤1100px) */
+@media (max-width: 1100px) {
   .up-nav-phone .t { display: none; }
-  .nav-btn-devis { display: none; }
+  .nav-btn-devis   { display: none; }
 }
 
-/* Tablette (≤900px) */
+/* Tablette (≤900px) : grilles 2 colonnes */
 @media (max-width: 900px) {
   .value-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr 1fr; }
   .rev-grid > :last-child { grid-column: 1 / -1; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
 }
 
-/* ============ MOBILE (≤640px) ============ */
-@media (max-width: 640px) {
+/* ============ MOBILE (≤768px) ============ */
+@media (max-width: 768px) {
   :root { --navbar-height: 64px; }
 
-  body { font-size: 16px; padding-bottom: 80px; }
+  body { padding-bottom: 80px; }
 
-  /* ── Navbar ── */
-  .up-nav            { height: 64px !important; gap: 0; }
-  .up-nav-links      { display: none !important; }
-  .up-nav-phone      { display: none !important; }
-  .nav-btn-devis     { display: none !important; }
-  .up-burger         { display: flex !important; margin-left: auto; }
-  .up-brand-logo     { height: 48px; }
+  /* ── Navbar (CSS backup — React gère déjà le rendu conditionnel) ── */
+  .up-nav        { height: 64px; }
+  .up-nav-links  { display: none !important; }
+  .up-nav-phone  { display: none !important; }
+  .nav-btn-devis { display: none !important; }
+  .up-burger     { display: flex !important; margin-left: auto; }
+  .up-brand-logo { height: 46px; }
 
   /* ── Hero ── */
-  .up-hero           { padding: 80px 0 40px; min-height: auto; }
-  .up-hero-content h1 { font-size: 32px; line-height: 1.15; }
-  .up-hero-content .lede { font-size: 16px; margin-top: 16px; }
-  .badge-row         { margin-bottom: 20px; gap: 8px; }
-  .pill              { font-size: 13px; padding: 7px 13px; }
-  .hero-actions      { margin-top: 28px; gap: 12px; }
-  .hero-note         { margin-top: 18px; font-size: 14px; }
-  .scroll-cue        { display: none; }
+  .up-hero { padding: 80px 0 44px; min-height: auto; }
+  .up-hero-content h1   { font-size: 34px; line-height: 1.18; }
+  .up-hero-content .lede { font-size: 16px; margin-top: 14px; }
+  .badge-row  { margin-bottom: 18px; }
+  .pill       { font-size: 13px; padding: 7px 13px; }
+  .hero-actions { margin-top: 26px; }
+  .hero-note    { font-size: 14px; margin-top: 16px; }
+  .scroll-cue   { display: none; }
 
   /* ── Sections ── */
-  .up-block  { padding: 56px 0; }
-  .up-wrap   { padding: 0 18px; }
-  .sec-head  { margin-bottom: 36px; }
+  .up-block { padding: 56px 0; }
+  .up-wrap  { padding: 0 20px; }
+  .sec-head { margin-bottom: 36px; }
   .sec-head h2 { font-size: 28px; }
   .sec-head p  { font-size: 16px; }
 
   /* ── Grilles → 1 colonne ── */
-  .value-grid,
-  .svc-grid,
-  .chantier-grid,
-  .rev-grid { grid-template-columns: 1fr; }
+  .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr !important; }
   .rev-grid > :last-child { grid-column: auto; }
   .foot-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 
   /* ── À propos ── */
   .up-about-lede { font-size: 16px; }
-  .value { padding: 26px 22px; }
+  .value { padding: 24px 20px; }
   .value h3 { font-size: 20px; }
-  .value p  { font-size: 15px; }
+  .value p  { font-size: 15.5px; }
 
   /* ── Prestations ── */
-  .svc-media  { height: 210px; }
-  .svc-body   { padding: 22px; }
+  .svc-media   { height: 200px; }
+  .svc-body    { padding: 20px; }
   .svc-body h3 { font-size: 20px; }
-  .svc-body p  { font-size: 15px; }
+  .svc-body p  { font-size: 15.5px; }
 
   /* ── Chantiers ── */
-  .chantier-media     { height: 190px; }
-  .chantier-body-new  { padding: 20px; }
+  .chantier-media    { height: 185px; }
+  .chantier-body-new { padding: 20px; }
   .chantier-body-new h3 { font-size: 19px; }
 
   /* ── CTA band ── */
-  .cta-inner { padding: 32px 22px; flex-direction: column; align-items: flex-start; gap: 24px; border-radius: 20px; }
+  .cta-inner { padding: 30px 20px; flex-direction: column; align-items: flex-start; gap: 22px; border-radius: 18px; }
   .cta-inner h2 { font-size: 24px; }
-  .cta-inner p  { font-size: 15px; }
+  .cta-inner p  { font-size: 15.5px; }
 
   /* ── Reviews ── */
-  .rev-summary { padding: 18px 20px; gap: 16px; }
-  .rev-summary .score { font-size: 34px; }
+  .rev-summary { padding: 18px 20px; gap: 14px; }
+  .rev-summary .score { font-size: 32px; }
   .rev-summary .vline { display: none; }
   .rev p { font-size: 15px; }
 
   /* ── Footer ── */
-  .up-footer  { padding: 52px 0 24px; }
-  .foot-grid  { gap: 32px; }
-  .foot-col a,
-  .foot-col span { font-size: 15px; }
+  .up-footer { padding: 48px 0 24px; }
+  .foot-grid { gap: 28px; }
 
-  /* ── Barre mobile fixe ── */
+  /* ── Barre fixe ── */
   .mobile-bar { display: flex; }
-  .mobile-bar .up-btn { font-size: 15px; padding: 16px; }
+  .mobile-bar .up-btn { font-size: 15px; padding: 15px; }
 
   /* ── Contact ── */
-  .contact-grid { grid-template-columns: 1fr; }
   .contact-form-box button { width: 100%; justify-content: center; }
 }
 

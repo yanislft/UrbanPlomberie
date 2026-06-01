@@ -16,12 +16,13 @@ const links = [
   { fr: "Contact",     href: "/contact" },
 ];
 
-const MOBILE = 640;
+const MOBILE = 768;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
-  const [mobile, setMobile]     = useState(window.innerWidth <= MOBILE);
+  const mq = typeof window !== 'undefined' ? window.matchMedia(`(max-width: ${MOBILE}px)`) : null;
+  const [mobile, setMobile] = useState(() => mq ? mq.matches : false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -31,13 +32,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const onResize = () => {
-      const m = window.innerWidth <= MOBILE;
-      setMobile(m);
-      if (!m) setOpen(false);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const mq = window.matchMedia(`(max-width: ${MOBILE}px)`);
+    const onChange = (e) => { setMobile(e.matches); if (!e.matches) setOpen(false); };
+    mq.addEventListener('change', onChange);
+    setMobile(mq.matches); // sync on mount
+    return () => mq.removeEventListener('change', onChange);
   }, []);
 
   useEffect(() => {

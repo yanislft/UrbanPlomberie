@@ -495,14 +495,14 @@ section { scroll-margin-top: var(--navbar-height); }
   .value p  { font-size: 25px; }
 
   /* ── Prestations ── */
-  .svc-media    { height: 280px; }
+  .svc-media    { height: 420px; }
   .svc-body     { padding: 38px; }
   .svc-body h3  { font-size: 40px; }
   .svc-body p   { font-size: 25px; }
   .svc-more     { font-size: 25px; margin-top: 28px; }
 
   /* ── Chantiers ── */
-  .chantier-media       { height: 260px; }
+  .chantier-media       { height: 400px; }
   .chantier-body-new    { padding: 38px; }
   .chantier-body-new h3 { font-size: 38px; }
   .chantier-body-new p  { font-size: 24px; }

@@ -419,22 +419,22 @@ section { scroll-margin-top: var(--navbar-height); }
   .up-wrap       { padding: 0 22px; }
 
   /* ── Hero ── */
-  .up-hero { padding: 104px 0 68px; min-height: auto; }
-  .up-hero-content h1    { font-size: 62px; line-height: 1.06; }
-  .up-hero-content .lede { font-size: 22px; margin-top: 22px; line-height: 1.65; }
-  .badge-row    { margin-bottom: 30px; }
-  .pill         { font-size: 16px; padding: 11px 18px; }
-  .hero-actions { margin-top: 38px; flex-direction: column; align-items: stretch; gap: 14px; }
+  .up-hero { padding: 108px 0 72px; min-height: auto; }
+  .up-hero-content h1    { font-size: 80px; line-height: 1.02; }
+  .up-hero-content .lede { font-size: 26px; margin-top: 26px; line-height: 1.6; }
+  .badge-row    { margin-bottom: 32px; }
+  .pill         { font-size: 18px; padding: 13px 20px; }
+  .hero-actions { margin-top: 42px; flex-direction: column; align-items: stretch; gap: 16px; }
   .hero-actions .call-fab { display: none; }
-  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 24px; font-size: 20px; border-radius: 14px; }
-  .hero-note  { font-size: 17px; margin-top: 26px; }
+  .hero-actions .up-btn   { width: 100%; justify-content: center; padding: 26px; font-size: 22px; border-radius: 16px; }
+  .hero-note  { font-size: 19px; margin-top: 28px; }
   .scroll-cue { display: none; }
 
   /* ── Sections ── */
-  .up-block { padding: 80px 0; }
-  .sec-head { margin-bottom: 52px; }
-  .sec-head h2 { font-size: 44px; }
-  .sec-head p  { font-size: 21px; }
+  .up-block { padding: 88px 0; }
+  .sec-head { margin-bottom: 56px; }
+  .sec-head h2 { font-size: 52px; }
+  .sec-head p  { font-size: 24px; }
 
   /* ── Grilles → 1 colonne ── */
   .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr !important; }
@@ -443,45 +443,45 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-grid { grid-template-columns: 1fr; }
 
   /* ── À propos ── */
-  .up-about-lede { font-size: 21px; line-height: 1.7; }
-  .value    { padding: 36px 30px; }
-  .value h3 { font-size: 29px; }
-  .value p  { font-size: 19px; }
+  .up-about-lede { font-size: 24px; line-height: 1.7; }
+  .value    { padding: 40px 32px; }
+  .value h3 { font-size: 34px; }
+  .value p  { font-size: 22px; }
 
   /* ── Prestations ── */
-  .svc-media    { height: 250px; }
-  .svc-body     { padding: 30px; }
-  .svc-body h3  { font-size: 29px; }
-  .svc-body p   { font-size: 19px; }
-  .svc-more     { font-size: 19px; margin-top: 24px; }
+  .svc-media    { height: 260px; }
+  .svc-body     { padding: 34px; }
+  .svc-body h3  { font-size: 34px; }
+  .svc-body p   { font-size: 22px; }
+  .svc-more     { font-size: 22px; margin-top: 26px; }
 
   /* ── Chantiers ── */
-  .chantier-media       { height: 230px; }
-  .chantier-body-new    { padding: 30px; }
-  .chantier-body-new h3 { font-size: 27px; }
-  .chantier-body-new p  { font-size: 18px; }
+  .chantier-media       { height: 240px; }
+  .chantier-body-new    { padding: 34px; }
+  .chantier-body-new h3 { font-size: 32px; }
+  .chantier-body-new p  { font-size: 21px; }
 
   /* ── CTA band ── */
   .up-cta-band { padding: 20px 0; }
-  .cta-inner   { padding: 44px 30px; flex-direction: column; align-items: stretch; gap: 30px; border-radius: 22px; }
-  .cta-inner h2 { font-size: 36px; }
-  .cta-inner p  { font-size: 20px; }
-  .cta-actions  { flex-direction: column; align-items: stretch; gap: 14px; }
+  .cta-inner   { padding: 48px 32px; flex-direction: column; align-items: stretch; gap: 32px; border-radius: 24px; }
+  .cta-inner h2 { font-size: 44px; }
+  .cta-inner p  { font-size: 24px; }
+  .cta-actions  { flex-direction: column; align-items: stretch; gap: 16px; }
   .cta-actions .call-fab { display: none; }
-  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 24px; font-size: 20px; border-radius: 14px; }
+  .cta-actions .up-btn   { width: 100%; justify-content: center; padding: 26px; font-size: 22px; border-radius: 16px; }
 
   /* ── Reviews ── */
-  .rev-summary  { padding: 26px 28px; gap: 20px; }
-  .rev-summary .score { font-size: 46px; }
+  .rev-summary  { padding: 28px 30px; gap: 22px; }
+  .rev-summary .score { font-size: 54px; }
   .rev-summary .vline { display: none; }
-  .rev   { padding: 28px; }
-  .rev p { font-size: 18px; line-height: 1.65; }
-  .rev .rev-who b { font-size: 18px; }
+  .rev   { padding: 32px; }
+  .rev p { font-size: 21px; line-height: 1.65; }
+  .rev .rev-who b { font-size: 21px; }
 
   /* ── Footer ── */
-  .up-footer { padding: 64px 0 40px; }
-  .foot-grid { gap: 44px; }
-  .foot-col a, .foot-col span { font-size: 18px; }
+  .up-footer { padding: 72px 0 44px; }
+  .foot-grid { gap: 48px; }
+  .foot-col a, .foot-col span { font-size: 20px; }
 
   /* ── Contact ── */
   .contact-form-box button { width: 100%; justify-content: center; }

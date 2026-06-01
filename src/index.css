@@ -122,10 +122,23 @@ section { scroll-margin-top: var(--navbar-height); }
 .up-header.scrolled .up-burger span { background: var(--ink); }
 
 /* mobile nav overlay */
-.up-mnav { display: none; }
+.up-mnav {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0; right: 0; bottom: 0;
+  z-index: 49;
+  background: var(--paper);
+  padding: 24px;
+  overflow-y: auto;
+  transition: opacity .25s ease, visibility .25s;
+}
 .up-mnav.open {
-  display: block; position: fixed; inset: 78px 0 0; z-index: 49;
-  background: var(--paper); padding: 24px; overflow-y: auto;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 .up-mnav a {
   display: block; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px;

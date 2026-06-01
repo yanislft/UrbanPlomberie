@@ -25,9 +25,8 @@ section {
   scroll-margin-top: var(--navbar-height);
 }
 
-html, body {
+body {
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 body {

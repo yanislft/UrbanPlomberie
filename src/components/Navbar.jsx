@@ -16,15 +16,28 @@ const links = [
   { fr: "Contact",     href: "/contact" },
 ];
 
+const MOBILE = 640;
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
+  const [mobile, setMobile]     = useState(window.innerWidth <= MOBILE);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
-    handler();
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      const m = window.innerWidth <= MOBILE;
+      setMobile(m);
+      if (!m) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   useEffect(() => {
@@ -40,49 +53,46 @@ export default function Navbar() {
         <div className="up-wrap up-nav">
 
           <a href="/" className="up-brand" aria-label="Urban Plomberie accueil">
-            <img
-              src={scrolled ? LogoColor : LogoWhite}
-              alt="Urban Plomberie"
-              className="up-brand-logo"
-            />
+            <img src={scrolled ? LogoColor : LogoWhite} alt="Urban Plomberie" className="up-brand-logo" />
           </a>
 
-          <ul className="up-nav-links">
-            {links.map(l => (
-              <li key={l.href}><a href={l.href}>{l.fr}</a></li>
-            ))}
-          </ul>
+          {!mobile && (
+            <ul className="up-nav-links">
+              {links.map(l => <li key={l.href}><a href={l.href}>{l.fr}</a></li>)}
+            </ul>
+          )}
 
           <div className="up-nav-cta">
-            <a href="tel:+33779432986" className="up-nav-phone">
-              <span className="ic"><PhoneIcon /></span>
-              <span className="t">
-                <small>Urgence 24H/24</small>
-                <b>Nous appeler</b>
-              </span>
-            </a>
-            <a href="/contact" className="up-btn up-btn-quote nav-btn-devis">Demander un devis</a>
-            <button
-              className={`up-burger${open ? " is-open" : ""}`}
-              onClick={() => setOpen(o => !o)}
-              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            >
-              <span /><span /><span />
-            </button>
+            {!mobile && (
+              <a href="tel:+33779432986" className="up-nav-phone">
+                <span className="ic"><PhoneIcon /></span>
+                <span className="t"><small>Urgence 24H/24</small><b>Nous appeler</b></span>
+              </a>
+            )}
+            {!mobile && (
+              <a href="/contact" className="up-btn up-btn-quote nav-btn-devis">Demander un devis</a>
+            )}
+            {mobile && (
+              <button
+                className={`up-burger${open ? " is-open" : ""}`}
+                onClick={() => setOpen(o => !o)}
+                aria-label={open ? "Fermer" : "Menu"}
+              >
+                <span /><span /><span />
+              </button>
+            )}
           </div>
 
         </div>
       </header>
 
-      {open && (
+      {mobile && open && (
         <div className="up-mnav">
-          {links.map(l => (
-            <a key={l.href} href={l.href} onClick={close}>{l.fr}</a>
-          ))}
-          <a href="tel:+33779432986" className="up-btn up-btn-call mnav-btn" onClick={close}>
-            <PhoneIcon /> Appeler · 07 79 43 29 86
+          {links.map(l => <a key={l.href} href={l.href} onClick={close}>{l.fr}</a>)}
+          <a href="tel:+33779432986" className="up-btn up-btn-call" onClick={close} style={{ marginTop: 24 }}>
+            <PhoneIcon /> 07 79 43 29 86
           </a>
-          <a href="/contact" className="up-btn up-btn-quote mnav-btn" onClick={close}>
+          <a href="/contact" className="up-btn up-btn-quote" onClick={close} style={{ marginTop: 12 }}>
             Demander un devis
           </a>
         </div>

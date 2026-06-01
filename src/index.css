@@ -407,72 +407,86 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-grid { grid-template-columns: 1fr; }
 }
 
-/* Mobile (≤640px) */
+/* ============ MOBILE (≤640px) ============ */
 @media (max-width: 640px) {
-  :root { --navbar-height: 66px; }
+  :root { --navbar-height: 64px; }
 
-  body { font-size: 15px; padding-bottom: 76px; }
+  body { font-size: 16px; padding-bottom: 80px; }
 
-  /* Navbar */
-  .up-nav { height: 66px; gap: 12px; }
-  .up-nav-links { display: none; }
-  .up-nav-phone  { display: none; }
-  .up-burger     { display: flex; margin-left: auto; }
-  .nav-btn-devis { display: none; }
+  /* ── Navbar ── */
+  .up-nav            { height: 64px !important; gap: 0; }
+  .up-nav-links      { display: none !important; }
+  .up-nav-phone      { display: none !important; }
+  .nav-btn-devis     { display: none !important; }
+  .up-burger         { display: flex !important; margin-left: auto; }
+  .up-brand-logo     { height: 48px; }
 
-  /* Hero */
-  .up-hero { padding: 86px 0 48px; min-height: auto; }
-  .up-hero-content h1 { font-size: 30px; }
-  .up-hero-content .lede { font-size: 15px; margin-top: 14px; }
-  .hero-actions { margin-top: 24px; }
-  .hero-note { margin-top: 16px; font-size: 13px; }
-  .badge-row { gap: 8px; margin-bottom: 18px; }
-  .pill { font-size: 12px; padding: 6px 12px; }
-  .scroll-cue { display: none; }
+  /* ── Hero ── */
+  .up-hero           { padding: 80px 0 40px; min-height: auto; }
+  .up-hero-content h1 { font-size: 32px; line-height: 1.15; }
+  .up-hero-content .lede { font-size: 16px; margin-top: 16px; }
+  .badge-row         { margin-bottom: 20px; gap: 8px; }
+  .pill              { font-size: 13px; padding: 7px 13px; }
+  .hero-actions      { margin-top: 28px; gap: 12px; }
+  .hero-note         { margin-top: 18px; font-size: 14px; }
+  .scroll-cue        { display: none; }
 
-  /* Sections */
-  .up-block { padding: 52px 0; }
-  .up-wrap { padding: 0 16px; }
-  .sec-head { margin-bottom: 32px; }
-  .sec-head h2 { font-size: 26px; }
-  .sec-head p  { font-size: 15px; }
+  /* ── Sections ── */
+  .up-block  { padding: 56px 0; }
+  .up-wrap   { padding: 0 18px; }
+  .sec-head  { margin-bottom: 36px; }
+  .sec-head h2 { font-size: 28px; }
+  .sec-head p  { font-size: 16px; }
 
-  /* Grilles → 1 colonne */
-  .value-grid, .svc-grid, .chantier-grid, .rev-grid { grid-template-columns: 1fr; }
+  /* ── Grilles → 1 colonne ── */
+  .value-grid,
+  .svc-grid,
+  .chantier-grid,
+  .rev-grid { grid-template-columns: 1fr; }
   .rev-grid > :last-child { grid-column: auto; }
   .foot-grid { grid-template-columns: 1fr; }
 
-  /* About */
+  /* ── À propos ── */
   .up-about-lede { font-size: 16px; }
-  .value { padding: 24px 20px; }
+  .value { padding: 26px 22px; }
+  .value h3 { font-size: 20px; }
+  .value p  { font-size: 15px; }
 
-  /* Prestations */
-  .svc-media { height: 200px; }
-  .svc-body { padding: 20px; }
-  .svc-body h3 { font-size: 19px; }
+  /* ── Prestations ── */
+  .svc-media  { height: 210px; }
+  .svc-body   { padding: 22px; }
+  .svc-body h3 { font-size: 20px; }
+  .svc-body p  { font-size: 15px; }
 
-  /* Chantiers */
-  .chantier-media { height: 180px; }
+  /* ── Chantiers ── */
+  .chantier-media     { height: 190px; }
+  .chantier-body-new  { padding: 20px; }
+  .chantier-body-new h3 { font-size: 19px; }
 
-  /* CTA band */
-  .cta-inner { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 24px; }
-  .cta-inner h2 { font-size: 22px; }
+  /* ── CTA band ── */
+  .cta-inner { padding: 32px 22px; flex-direction: column; align-items: flex-start; gap: 24px; border-radius: 20px; }
+  .cta-inner h2 { font-size: 24px; }
+  .cta-inner p  { font-size: 15px; }
 
-  /* Reviews */
-  .rev-summary { padding: 16px 20px; gap: 14px; }
-  .rev-summary .score { font-size: 30px; }
+  /* ── Reviews ── */
+  .rev-summary { padding: 18px 20px; gap: 16px; }
+  .rev-summary .score { font-size: 34px; }
   .rev-summary .vline { display: none; }
+  .rev p { font-size: 15px; }
 
-  /* Footer */
-  .foot-grid { gap: 28px; }
-  .up-footer { padding: 48px 0 24px; }
+  /* ── Footer ── */
+  .up-footer  { padding: 52px 0 24px; }
+  .foot-grid  { gap: 32px; }
+  .foot-col a,
+  .foot-col span { font-size: 15px; }
 
-  /* Barre mobile fixe */
+  /* ── Barre mobile fixe ── */
   .mobile-bar { display: flex; }
+  .mobile-bar .up-btn { font-size: 15px; padding: 16px; }
 
-  /* Contact */
+  /* ── Contact ── */
   .contact-grid { grid-template-columns: 1fr; }
-  .contact-form-box button { width: 100%; }
+  .contact-form-box button { width: 100%; justify-content: center; }
 }
 
 /* Burger animé → croix */

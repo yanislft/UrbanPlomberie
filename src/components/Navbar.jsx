@@ -6,32 +6,34 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
+  const restoreScroll = () => {
+    const scrollY = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+  };
+
   useEffect(() => {
-    if (isOpen) 
-    {
+    if (isOpen) {
       document.body.style.position = "fixed";
       document.body.style.top = `-${window.scrollY}px`;
       document.body.style.width = "100%";
       setIsMenuVisible(true);
-    } 
-    
-    else 
-    {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      if (scrollY) 
-      {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
+    } else {
+      restoreScroll();
 
-      if (isMenuVisible) 
-      {
+      if (isMenuVisible) {
         const t = setTimeout(() => setIsMenuVisible(false), 400);
         return () => clearTimeout(t);
       }
     }
+
+    return () => {
+      if (isOpen) restoreScroll();
+    };
   }, [isOpen]);
 
   const links = [

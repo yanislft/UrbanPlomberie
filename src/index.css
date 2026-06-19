@@ -551,6 +551,64 @@ section { scroll-margin-top: var(--navbar-height); }
   .contact-submit { font-size: 20px; padding: 22px; }
 }
 
+/* ============ PHONE (≤600px) ============ */
+@media (max-width: 600px) {
+  /* ── Navbar ── */
+  :root { --navbar-height: 80px; }
+  .up-nav        { height: 80px; }
+  .up-brand-logo { height: 56px; }
+  .up-burger span { width: 28px; height: 3px; }
+
+  /* ── Hero ── */
+  .up-hero { padding: 100px 0 56px; }
+  .up-hero-content h1    { font-size: clamp(34px, 9vw, 48px); line-height: 1.08; }
+  .up-hero-content .lede { font-size: clamp(15px, 4vw, 17px); margin-top: 16px; }
+  .badge-row    { margin-bottom: 20px; }
+  .pill         { font-size: 13px; padding: 8px 14px; }
+  .hero-actions { margin-top: 28px; gap: 12px; }
+  .hero-actions .up-btn { font-size: 17px; padding: 18px; }
+  .hero-note    { font-size: 14px; margin-top: 18px; }
+
+  /* ── Sections ── */
+  .sec-head h2 { font-size: clamp(26px, 7vw, 36px); }
+  .sec-head p  { font-size: 16px; }
+
+  /* ── À propos ── */
+  .up-about-lede { font-size: 16px; }
+  .value    { padding: 28px 22px; }
+  .value h3 { font-size: 22px; }
+  .value p  { font-size: 15px; }
+
+  /* ── Prestations ── */
+  .svc-media    { height: 220px; }
+  .svc-body     { padding: 22px 20px 26px; }
+  .svc-body h3  { font-size: 22px; }
+  .svc-body p   { font-size: 15px; }
+  .svc-more     { font-size: 15px; margin-top: 14px; }
+
+  /* ── Chantiers ── */
+  .chantier-media       { height: 220px; }
+  .chantier-body-new    { padding: 22px 20px 26px; }
+  .chantier-body-new h3 { font-size: 21px; }
+  .chantier-body-new p  { font-size: 14px; }
+
+  /* ── CTA band ── */
+  .cta-inner    { padding: 36px 24px; }
+  .cta-inner h2 { font-size: clamp(22px, 6vw, 30px); }
+  .cta-inner p  { font-size: 15px; }
+  .cta-actions .up-btn { font-size: 17px; padding: 18px; }
+
+  /* ── Reviews ── */
+  .rev-summary .score { font-size: 40px; }
+  .rev   { padding: 22px; }
+  .rev p { font-size: 15px; }
+  .rev .rev-who b { font-size: 15px; }
+
+  /* ── Footer ── */
+  .foot-grid { grid-template-columns: 1fr; }
+  .foot-col a, .foot-col span { font-size: 15px; }
+}
+
 /* Burger animé → croix
    gap:10px + height:5px → décalage = height + gap = 15px */
 .up-burger span { transition: transform .3s ease, opacity .3s ease; }

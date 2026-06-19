@@ -32,7 +32,7 @@ function Chantiers() {
       <div className="up-wrap">
         <div className="sec-head reveal">
           <span className="eyebrow center">Nos chantiers</span>
-          <h2>Nos chantiers</h2>
+          <h2>Nos réalisations récentes</h2>
           <p>Découvrez quelques-unes de nos réalisations récentes.</p>
         </div>
 
@@ -40,7 +40,7 @@ function Chantiers() {
           {chantiers.map((c, i) => (
             <div key={i} className={`chantier-card-new reveal${i > 0 ? ` d${i}` : ""}`}>
               <div className="chantier-media">
-                <img src={c.img} alt={c.title} />
+                <img src={c.img} alt={c.title} loading="lazy" width="800" height="400" />
                 <span className="chantier-num">{c.num}</span>
               </div>
               <div className="chantier-body-new">

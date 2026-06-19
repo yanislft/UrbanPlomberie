@@ -88,23 +88,23 @@ export default function Contact() {
             <h3>Envoyer un message</h3>
 
             {status === "success" && (
-              <div className="form-alert form-alert-ok">✓ Message envoyé ! Nous vous répondrons rapidement.</div>
+              <div role="alert" className="form-alert form-alert-ok">✓ Message envoyé ! Nous vous répondrons rapidement.</div>
             )}
             {status === "error" && (
-              <div className="form-alert form-alert-err">Une erreur est survenue. Veuillez réessayer.</div>
+              <div role="alert" className="form-alert form-alert-err">Une erreur est survenue — vérifiez votre connexion et réessayez.</div>
             )}
 
             <form onSubmit={handleSubmit}>
               <label>
-                Nom
-                <input type="text" name="name" placeholder="Votre nom" required />
+                Nom <span aria-hidden="true" style={{ color: "var(--signal-deep)" }}>*</span>
+                <input type="text" name="name" autoComplete="name" placeholder="Votre nom" required />
               </label>
               <label>
-                Email
-                <input type="email" name="email" placeholder="votre@email.com" required />
+                Email <span aria-hidden="true" style={{ color: "var(--signal-deep)" }}>*</span>
+                <input type="email" name="email" autoComplete="email" placeholder="votre@email.com" required />
               </label>
               <label>
-                Message
+                Message <span aria-hidden="true" style={{ color: "var(--signal-deep)" }}>*</span>
                 <textarea name="message" rows="5" placeholder="Décrivez votre besoin..." required />
               </label>
               <button type="submit" className="up-btn up-btn-quote contact-submit" disabled={status === "sending"}>

@@ -15,10 +15,10 @@ function Footer() {
               Intervention rapide et travail soigné, à Cavaillon et ses alentours.
             </p>
             <div className="foot-social">
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/urbanplomberie" aria-label="Facebook Urban Plomberie" rel="noopener noreferrer" target="_blank">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h2.5l.5-3H13v-2a1 1 0 0 1 1-1Z"/></svg>
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/urbanplomberie" aria-label="Instagram Urban Plomberie" rel="noopener noreferrer" target="_blank">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="3" y="3" width="18" height="18" rx="5"/>
                   <circle cx="12" cy="12" r="4"/>

@@ -62,7 +62,7 @@ function Prestation() {
           {services.map((s, i) => (
             <div key={i} className={`svc${s.urgent ? " urgent" : ""} reveal${i % 2 === 1 ? " d1" : ""}`}>
               <div className="svc-media">
-                <img src={s.img} alt={s.title} />
+                <img src={s.img} alt={s.title} loading="lazy" width="800" height="420" />
                 <span className="svc-tag">{s.tagIcon} {s.tag}</span>
               </div>
               <div className="svc-body">
